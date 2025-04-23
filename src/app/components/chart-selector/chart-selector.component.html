@@ -1,0 +1,17 @@
+<div class="chart-selector">
+    <h2 class="selector-header">Select Chart</h2>
+    <hr class="divider">
+    
+    <ul class="chart-list">
+        @for (chart of chartTemplates; track chart.type) {
+            <li class="chart-item" 
+                [class.active]="selectedChart === chart.type"
+                (click)="selectChart(chart.type)">
+                {{ chart.name }}
+            </li>
+            @if (chart.type === 'line') {
+                <hr class="divider">
+            }
+        }
+    </ul>
+</div>

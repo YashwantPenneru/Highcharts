@@ -1,0 +1,17 @@
+<div class="chart-container">
+    @if (chartOptions) {
+      <highcharts-chart 
+        [Highcharts]="Highcharts" 
+        [options]="chartOptions"
+        style="width: 100%; height: 400px; display: block;">
+      </highcharts-chart>
+    } @else {
+      <div class="no-chart-selected">
+        <h3>No Chart Selected</h3>
+        <p>Please select a chart from the options</p>
+        <div class="chart-icon">
+          <i class="bi bi-pie-chart"></i>
+        </div>
+      </div>
+    }
+  </div>
