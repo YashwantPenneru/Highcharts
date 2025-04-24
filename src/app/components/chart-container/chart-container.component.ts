@@ -11,12 +11,14 @@ import { HighchartsChartModule } from 'highcharts-angular';
   templateUrl: './chart-container.component.html',
   styleUrl: './chart-container.component.css'
 })
-export class ChartContainerComponent {
+export class ChartContainerComponent implements OnChanges,OnInit{
   @Input() chartType: string = '';
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {};
   selectedChart: any;
-  
+   ngOnInit(): void {
+    TreemapModule(Highcharts);    
+  }
 
   
   ngOnChanges(changes: SimpleChanges) {
@@ -122,7 +124,7 @@ export class ChartContainerComponent {
       },
       chart: {
         type: 'treemap',
-        height: '100%'
+        height: '400rem'
       },
       title: {
         text: 'Product Categories by Market Share'
