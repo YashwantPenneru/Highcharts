@@ -124,7 +124,7 @@ export class ChartContainerComponent implements OnChanges,OnInit{
       },
       chart: {
         type: 'treemap',
-        height: '400rem'
+        height: '400px'
       },
       title: {
         text: 'Product Categories by Market Share'
