@@ -7,12 +7,13 @@ export class CookieService {
   delete(arg0: string) {
     throw new Error('Method not implemented.');
   }
-  set(name: string, value: string, days: number) {
+
+  set(name: string, value: string, minutes: number) {
     const date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    date.setTime(date.getTime() + (1000));
     document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
   }
-
+  
   get(name: string): string | null {
     const cookies = document.cookie.split(';');
     for (const cookie of cookies) {
